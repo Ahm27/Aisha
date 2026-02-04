@@ -3,81 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Friends Wall</title>
+<title>Friends Who Matter</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #6a11cb, #2575fc);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   color: #fff;
-  text-align: center;
+  min-height: 100vh;
   padding: 40px 15px;
 }
 
+@keyframes gradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
+  font-size: 2.4rem;
+  margin-bottom: 8px;
 }
 
 .subtitle {
+  font-size: 1rem;
   opacity: 0.9;
   margin-bottom: 40px;
 }
 
 .container {
-  max-width: 700px;
+  max-width: 750px;
   margin: auto;
 }
 
 .card {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  padding: 20px;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  padding: 22px;
+  margin-bottom: 22px;
+  text-align: left;
+  animation: fadeUp 0.8s ease both;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .name {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .note {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 0.95rem;
-  opacity: 0.9;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+.footer {
+  margin-top: 50px;
+  font-size: 0.85rem;
+  opacity: 0.7;
 }
 </style>
 </head>
 
 <body>
-  <h1>People Who Mean Everything 💙</h1>
-  <div class="subtitle">A small page for big appreciation</div>
+  <h1>People Who Changed My Life 💫</h1>
+  <div class="subtitle">Not everyone is here — only the real ones.</div>
 
   <div class="container">
+
     <div class="card">
-      <div class="name">Ahmed</div>
-      <div class="note">Always supportive, no matter what.</div>
+      <div class="name">🧠 Ahmed</div>
+      <div class="note">
+        The one who always listens, even when it’s hard.
+      </div>
     </div>
 
     <div class="card">
-      <div class="name">Omar</div>
-      <div class="note">The friend who never left.</div>
+      <div class="name">🔥 Omar</div>
+      <div class="note">
+        Always pushes me forward and never lets me quit.
+      </div>
     </div>
 
     <div class="card">
-      <div class="name">Sara</div>
-      <div class="note">Brings positivity everywhere.</div>
+      <div class="name">🌸 Sara</div>
+      <div class="note">
+        Brings calm, positivity, and good energy everywhere.
+      </div>
     </div>
+
+  </div>
+
+  <div class="footer">
+    Made with 🤍 just because.
   </div>
 </body>
 </html>
