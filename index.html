@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Friends Who Matter</title>
+<title>People Who Matter</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -21,6 +21,7 @@ body {
   color: #fff;
   min-height: 100vh;
   padding: 40px 15px;
+  text-align: center;
 }
 
 @keyframes gradient {
@@ -31,18 +32,36 @@ body {
 
 h1 {
   font-size: 2.4rem;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .subtitle {
   font-size: 1rem;
   opacity: 0.9;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
+}
+
+/* Music Button */
+.music-btn {
+  background: rgba(255,255,255,0.25);
+  border: none;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.35);
 }
 
 .container {
-  max-width: 750px;
-  margin: auto;
+  max-width: 760px;
+  margin: 40px auto 0;
 }
 
 .card {
@@ -88,29 +107,34 @@ h1 {
 </head>
 
 <body>
+
   <h1>People Who Changed My Life 💫</h1>
-  <div class="subtitle">Not everyone is here — only the real ones.</div>
+  <div class="subtitle">Some friendships deserve their own page.</div>
+
+  <!-- Music -->
+  <audio id="bg-music" src="song.mp3" loop></audio>
+  <button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
 
   <div class="container">
 
     <div class="card">
       <div class="name">🧠 Ahmed</div>
       <div class="note">
-        The one who always listens, even when it’s hard.
+        Always understands without needing many words.
       </div>
     </div>
 
     <div class="card">
       <div class="name">🔥 Omar</div>
       <div class="note">
-        Always pushes me forward and never lets me quit.
+        Pushes me forward and believes in me even when I don’t.
       </div>
     </div>
 
     <div class="card">
       <div class="name">🌸 Sara</div>
       <div class="note">
-        Brings calm, positivity, and good energy everywhere.
+        Pure energy, calm heart, and constant positivity.
       </div>
     </div>
 
@@ -119,5 +143,25 @@ h1 {
   <div class="footer">
     Made with 🤍 just because.
   </div>
+
+<script>
+let isPlaying = false;
+const music = document.getElementById("bg-music");
+
+music.volume = 0.4;
+
+function toggleMusic() {
+  if (!isPlaying) {
+    music.play();
+    isPlaying = true;
+    event.target.innerText = "⏸ Pause Music";
+  } else {
+    music.pause();
+    isPlaying = false;
+    event.target.innerText = "🎵 Play Music";
+  }
+}
+</script>
+
 </body>
 </html>
